@@ -68,7 +68,7 @@ export async function updateInvoice(id: string, formData: FormData) {
 
 
 export async function deleteInvoice(invoice_id: string) {
-
+  throw new Error('Failed to Delete Invoice');
   await postgres(process.env.POSTGRES_URL!, { ssl: false }).begin(async (sql) => {
     await sql`
       DELETE FROM invoices
